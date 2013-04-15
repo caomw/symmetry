@@ -78,3 +78,6 @@ reps = round( N / n)
 
 p1, p2, pm, pg, cm, pmm, pmg, p4m, p4g : repmat( tile, [ reps reps ] )
 cmm : repmat(tile, [round(N/(4*n)), round(N/(4*n))])
+
+
+----
