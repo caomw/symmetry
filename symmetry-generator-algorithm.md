@@ -1,5 +1,10 @@
 # Symmetry Project
-## Notes on code from Alistair X
+
+## Notes on MATLAB code from Alasdair Clarke
+
+### Code used in
+
+Clarke, A. D. F., Green, P. R., Halley, F., & Chantler, M. J. (2011). Similar Symmetries: The Role of Wallpaper Groups in Perceptual Texture Similarity. Symmetry, 3(2), 246–264. <http://doi.dx.org/doi:103390/sym3020246>
 
 ## 2013-04-14-08:44
 
@@ -7,7 +12,7 @@
 
 #### 1. Make elemental tile region.
 
-Assumes square lattice. Elemental tile must not have intrinsinc reflection or rotational symmetry.
+Assumes square lattice. Elemental tile must not have intrinsinc reflection or rotational symmetry, but the use of random textures effectively ensures this.
 
 Dimensions of elemental tile:
 
@@ -19,7 +24,7 @@ Dimensions of elemental tile:
 [ n/4 n/4 ] : cmm
 [ n/4 n/2 ] = p4g
 
-#### 2. Transform (rotate, horiz_rev, vert_rev )
+#### 2. Transform (rotate, horiz_rev, vert_rev ) tile
 
 p2 	: { tile, rotate( tile, 180 ) }
 pm 	: { tile, reverse( tile, 'horiz') }
@@ -35,10 +40,9 @@ p4g : { tile, reverse( tile, 'horiz'), rotate( tile, 270), rotate( tile, 180), r
 
 #### 3. Create motif
 
-Arrange to create [ n n ] motif combining components from 2 in 2D arrangement.
+Arrange to create [ n n ] motif combining components from in 2D arrangement.
 
 p1_motif : [ tile ]
-
 
 p2_motif : [ tile rot180 ]
 
@@ -74,4 +78,3 @@ reps = round( N / n)
 
 p1, p2, pm, pg, cm, pmm, pmg, p4m, p4g : repmat( tile, [ reps reps ] )
 cmm : repmat(tile, [round(N/(4*n)), round(N/(4*n))])
-cgg :
