@@ -1,0 +1,4 @@
+symmetry
+========
+
+computational symmetry project
