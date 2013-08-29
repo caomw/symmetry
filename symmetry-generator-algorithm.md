@@ -6,6 +6,15 @@
 
 Clarke, A. D. F., Green, P. R., Halley, F., & Chantler, M. J. (2011). Similar Symmetries: The Role of Wallpaper Groups in Perceptual Texture Similarity. Symmetry, 3(2), 246–264. <http://doi.dx.org/doi:103390/sym3020246>
 
+See [SymmCodeOriginal/](SymCodeOrig/)
+
+Gilmore's rewrite is called [wallpaper-maker](wallpaper-maker/). 
+
+## 2013-08-29-09:07
+
+Added code to github.
+
+
 ## 2013-04-14-08:44
 
 ### Tiling algorithm
@@ -17,25 +26,41 @@ Assumes square lattice. Elemental tile must not have intrinsinc reflection or ro
 Dimensions of elemental tile:
 
 [ n n ] 	: p1
+
 [ n n/2 ]	: p2
+
 [ n/2 n ]	: pg, pm, pgg
+
 [ n/2 n/4 ] : cm
+
 [ n/2 n/2 ]	: pmm, pmg, p4, p4m
+
 [ n/4 n/4 ] : cmm
+
 [ n/4 n/2 ] = p4g
 
 #### 2. Transform (rotate, horiz_rev, vert_rev ) tile
 
 p2 	: { tile, rotate( tile, 180 ) }
+
 pm 	: { tile, reverse( tile, 'horiz') }
+
 pg 	: { tile, reverse( tile, 'vert' ) }
+
 cm 	: { tile, reverse( tile, 'vert' ) }
+
 pmm : { tile, reverse( tile, 'vert' ), reverse( tile, 'horiz'), reverse( tile, 'both') }
+
 pmg : { tile, reverse( tile, 'vert' ), reverse( tile, 'horiz'), reverse( tile, 'both') }
+
 pgg : ?? triangular replication
+
 cmm : { tile, reverse( tile, 'vert'), ?? }
+
 p4 	: { tile, rotate( tile, 270), rotate( tile, 180), rotate( tile, 90) }
+
 p4m : { tile, rotate( tile, 270), rotate( tile, 180), rotate( tile, 90) }
+
 p4g : { tile, reverse( tile, 'horiz'), rotate( tile, 270), rotate( tile, 180), rotate( tile, 90) }
 
 #### 3. Create motif
